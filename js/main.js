@@ -12,6 +12,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_burger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/burger */ "./src/js/components/burger.js");
 /* harmony import */ var _components_burger__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_components_burger__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/slider */ "./src/js/components/slider.js");
+/* harmony import */ var _components_sortAndFilter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/sortAndFilter */ "./src/js/components/sortAndFilter.js");
+/* harmony import */ var _components_sortAndFilter__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_sortAndFilter__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 
@@ -53,24 +56,85 @@ window.addEventListener("DOMContentLoaded", () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
 
-swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Autoplay]);
+swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation]);
 const slider = () => {
-  const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](".slider", {
+  const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](".swiper", {
     direction: "horizontal",
     loop: true,
-    autoplay: {
-      delay: 10000
-    },
-    slidesPerView: 1,
-    pagination: {
-      el: ".slider__pagination",
-      clickable: true
+    slidesPerView: 6,
+    navigation: {
+      nextEl: ".slider__next",
+      prevEl: ".slider__prev"
     }
   });
 };
 window.addEventListener("DOMContentLoaded", () => {
   slider();
 });
+
+/***/ }),
+
+/***/ "./src/js/components/sortAndFilter.js":
+/*!********************************************!*\
+  !*** ./src/js/components/sortAndFilter.js ***!
+  \********************************************/
+/***/ (() => {
+
+const sortAndFilter = () => {
+  try {
+    const sortBtn = document.querySelector(".sort__btn"),
+      sortContent = document.querySelector(".sort"),
+      sortHiddenBtn = document.querySelector(".sort__hidden"),
+      sortLinks = document.querySelectorAll(".sort__link"),
+      filterBtn = document.querySelector(".filter__btn"),
+      filterWrap = document.querySelector(".content__wrap"),
+      filterContent = document.querySelector(".filter");
+    sortBtn.addEventListener("click", function () {
+      sortContent.classList.add("active");
+      sortHiddenBtn.classList.add("active");
+    });
+    sortHiddenBtn.addEventListener("click", function () {
+      sortContent.classList.remove("active");
+      sortHiddenBtn.classList.remove("active");
+    });
+    sortLinks.forEach(link => {
+      link.addEventListener("click", function () {
+        sortContent.classList.remove("active");
+        sortHiddenBtn.classList.remove("active");
+      });
+    });
+    filterBtn.addEventListener("click", function () {
+      this.classList.toggle("active");
+      filterWrap.classList.toggle("active");
+      filterContent.classList.toggle("active");
+    });
+    const items = document.querySelectorAll(".item");
+    items.forEach(item => {
+      const minusValue = item.querySelector(".minus"),
+        plusValue = item.querySelector(".plus"),
+        amountValue = item.querySelector(".amount");
+      minusValue.addEventListener("click", () => {
+        amountValue.value = +amountValue.value - 1;
+        amountValue.setAttribute("value", amountValue.value);
+      });
+      plusValue.addEventListener("click", () => {
+        amountValue.value = +amountValue.value + 1;
+        amountValue.setAttribute("value", amountValue.value);
+      });
+    });
+    const showAllType = document.querySelector(".content__all"),
+      types = document.querySelectorAll(".header__link");
+    showAllType.addEventListener("click", function () {
+      types.forEach(type => {
+        type.classList.remove("hidden");
+      });
+      this.remove();
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+sortAndFilter();
 
 /***/ }),
 
