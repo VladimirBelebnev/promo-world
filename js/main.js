@@ -56,7 +56,7 @@ window.addEventListener("DOMContentLoaded", () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
 
-swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation]);
+swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Autoplay, swiper__WEBPACK_IMPORTED_MODULE_0__.EffectCoverflow]);
 const slider = () => {
   const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](".swiper", {
     direction: "horizontal",
@@ -65,6 +65,23 @@ const slider = () => {
     navigation: {
       nextEl: ".slider__next",
       prevEl: ".slider__prev"
+    }
+  });
+  const productSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](".product__slider", {
+    direction: "horizontal",
+    loop: true,
+    spaceBetween: 25,
+    autoplay: 10000,
+    speed: 500,
+    initialSlide: 0,
+    slidesPerView: 2.5,
+    navigation: {
+      nextEl: ".product__prev",
+      prevEl: ".product__next"
+    },
+    pagination: {
+      el: ".product__pagination",
+      clickable: true
     }
   });
 };
@@ -108,20 +125,6 @@ const sortAndFilter = () => {
       filterWrap.classList.toggle("active");
       filterContent.classList.toggle("active");
     });
-    const items = document.querySelectorAll(".item");
-    items.forEach(item => {
-      const minusValue = item.querySelector(".minus"),
-        plusValue = item.querySelector(".plus"),
-        amountValue = item.querySelector(".amount");
-      minusValue.addEventListener("click", () => {
-        amountValue.value = +amountValue.value - 1;
-        amountValue.setAttribute("value", amountValue.value);
-      });
-      plusValue.addEventListener("click", () => {
-        amountValue.value = +amountValue.value + 1;
-        amountValue.setAttribute("value", amountValue.value);
-      });
-    });
     const showAllType = document.querySelector(".content__all"),
       types = document.querySelectorAll(".header__link");
     showAllType.addEventListener("click", function () {
@@ -129,6 +132,44 @@ const sortAndFilter = () => {
         type.classList.remove("hidden");
       });
       this.remove();
+    });
+  } catch (error) {
+    console.log(error);
+  }
+  try {
+    const items = document.querySelectorAll(".item");
+    items.forEach(item => {
+      const minusValue = item.querySelector(".minus"),
+        plusValue = item.querySelector(".plus"),
+        amountValue = item.querySelector(".amount");
+      minusValue.addEventListener("click", () => {
+        if (amountValue.value != 10) {
+          amountValue.value = +amountValue.value - 10;
+          amountValue.setAttribute("value", amountValue.value);
+        }
+      });
+      plusValue.addEventListener("click", () => {
+        amountValue.value = +amountValue.value + 10;
+        amountValue.setAttribute("value", amountValue.value);
+      });
+    });
+  } catch (error) {
+    console.log(error);
+  }
+  try {
+    const productItem = document.querySelector(".product__amount");
+    const minusValue = productItem.querySelector(".minus"),
+      plusValue = productItem.querySelector(".plus"),
+      amountValue = productItem.querySelector(".amount");
+    minusValue.addEventListener("click", () => {
+      if (amountValue.value != 10) {
+        amountValue.value = +amountValue.value - 10;
+        amountValue.setAttribute("value", amountValue.value);
+      }
+    });
+    plusValue.addEventListener("click", () => {
+      amountValue.value = +amountValue.value + 10;
+      amountValue.setAttribute("value", amountValue.value);
     });
   } catch (error) {
     console.log(error);

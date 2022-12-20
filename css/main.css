@@ -14,6 +14,38 @@ a {
   color: #171717;
 }
 
+.pagination__wrap {
+  margin-top: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 7px;
+}
+.pagination__wrap .prev, .pagination__wrap .next {
+  display: none !important;
+}
+.pagination a {
+  font-weight: 400;
+  color: rgb(101, 100, 100);
+  font-size: 13px;
+  opacity: 1;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+.pagination a:hover {
+  opacity: 0.8;
+}
+.pagination a.active {
+  color: #FF6600;
+}
+
 .burger {
   display: none;
   position: relative;
@@ -23,6 +55,8 @@ a {
   width: 30px;
   cursor: pointer;
   z-index: 100;
+  margin: 0;
+  padding: 0;
 }
 
 .burger-line {
@@ -187,6 +221,9 @@ a {
   .container {
     max-width: 1140px;
   }
+  .pagination__wrap {
+    margin-top: 75px;
+  }
 }
 @media (max-width: 1170px) {
   .container {
@@ -212,6 +249,20 @@ a {
   .footer a {
     color: #fff;
     display: block;
+  }
+  .pagination__wrap {
+    margin-top: 60px;
+  }
+  .pagination__wrap .prev, .pagination__wrap .next {
+    display: block !important;
+  }
+  .pagination__wrap .prev {
+    width: 10px;
+    height: 10px;
+  }
+  .pagination__wrap .next {
+    width: 21px;
+    height: 21px;
   }
 }
 @media (max-width: 768px) {
@@ -239,6 +290,9 @@ a {
   .footer__content {
     font-size: 7px;
     padding: 30px 0 20px;
+  }
+  .pagination__wrap {
+    margin-top: 40px;
   }
 }
 .header {
@@ -515,6 +569,14 @@ a {
   position: relative;
 }
 .catalog__circle {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: url("../img/catalog-circle.png") top left no-repeat;
 }
 .catalog__content {
@@ -1084,7 +1146,8 @@ a {
   padding: 0;
   margin: 0;
   height: auto;
-  width: 20px;
+  text-align: center;
+  width: 25px;
   font-weight: 400;
   font-size: 15px;
   color: #171717;
@@ -1432,7 +1495,7 @@ a {
   }
   .item__amount input {
     font-size: 12px !important;
-    width: 15px !important;
+    width: 20px !important;
     height: 12px !important;
     line-height: 10px;
   }
@@ -1522,7 +1585,7 @@ a {
   }
   .item__amount input {
     font-size: 10px !important;
-    width: 12px !important;
+    width: 18px !important;
     height: 12px !important;
     line-height: 10px;
   }
@@ -1535,5 +1598,207 @@ a {
   .item__info {
     font-size: 8px !important;
   }
+}
+.product {
+  background: none;
+}
+.product .container {
+  position: relative;
+}
+.product__content {
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.product__sliderWrap, .product__block {
+  width: 50%;
+}
+.product__block {
+  width: 660px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 27px;
+}
+.product__status {
+  font-size: 11px;
+  color: #FF6600;
+}
+.product__title {
+  margin: 0;
+  padding: 0;
+  margin-top: 7px;
+  font-weight: 700;
+  font-size: 27px;
+  text-transform: uppercase;
+  color: #171717;
+}
+.product__articul {
+  margin-top: 7px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  color: #171717;
+}
+.product hr {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.product__subtitle {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 20px;
+  color: #171717;
+}
+.product__descr {
+  margin: 0;
+  padding: 0;
+  margin-top: 3px;
+  font-weight: 300;
+  font-size: 17px;
+  color: #000000;
+}
+.product__about {
+  white-space: pre-line;
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.product__order {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.product__price {
+  font-weight: 400;
+  font-size: 30px;
+  color: #FF6600;
+}
+.product__amount {
+  margin-left: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 4px;
+}
+.product__amount button {
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 24px;
+  color: #171717;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+.product__amount input {
+  padding: 0;
+  margin: 0;
+  height: auto;
+  text-align: center;
+  width: 35px;
+  font-weight: 400;
+  font-size: 20px;
+  color: #171717;
+  border: none;
+  outline: none;
+}
+.product__btn {
+  cursor: pointer;
+  border: none;
+  background: #FF6600;
+  margin: 0;
+  padding: 10px 70px;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  color: #FFFFFF;
+  opacity: 1;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+.product__btn:hover {
+  opacity: 0.85;
+}
+.product__nav {
+  margin-top: 130px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.product__slide {
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+}
+.product__slide img {
+  -o-object-fit: contai;
+  object-fit: contai;
+  width: 100%;
+}
+.product__slider {
+  margin-right: 0px;
+  padding-top: 150px;
+}
+.product__slide.swiper-slide-active {
+  -webkit-transform: scale(1.4);
+  -ms-transform: scale(1.4);
+  transform: scale(1.4);
+}
+.product__prev {
+  z-index: 10;
+  cursor: pointer;
+  width: 8px;
+  height: 18px;
+}
+.product__next {
+  z-index: 10;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+}
+.product__pagination {
+  max-width: 150px;
+  position: static;
+}
+.product__pagination .swiper-pagination-bullet {
+  border: 1px solid #656464;
+  background: transparent;
+}
+.product__pagination .swiper-pagination-bullet-active {
+  border: 1px solid #FF6600;
+  background: #FF6600;
 }
 /*# sourceMappingURL=main.css.map */
