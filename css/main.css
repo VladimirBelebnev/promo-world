@@ -1793,6 +1793,7 @@ a {
   padding-top: 120px;
 }
 .product__slide.swiper-slide-active {
+  z-index: 10 !important;
   -webkit-transform: scale(1.4);
   -ms-transform: scale(1.4);
   transform: scale(1.4);

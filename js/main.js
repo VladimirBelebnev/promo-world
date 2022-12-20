@@ -41,7 +41,11 @@ const burger = () => {
   });
 };
 window.addEventListener("DOMContentLoaded", () => {
-  burger();
+  try {
+    burger();
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 /***/ }),
@@ -76,8 +80,10 @@ const slider = () => {
       direction: "horizontal",
       loop: true,
       spaceBetween: 25,
-      autoplay: 10000,
-      speed: 500,
+      autoplay: {
+        delay: 10000
+      },
+      speed: 1000,
       initialSlide: 0,
       slidesPerView: 2.5,
       slidesPerGroup: 1,
@@ -98,6 +104,7 @@ const slider = () => {
       direction: "horizontal",
       loop: true,
       initialSlide: 0,
+      speed: 800,
       slidesPerView: 3.5,
       navigation: {
         nextEl: ".related__next",
@@ -113,10 +120,6 @@ const slider = () => {
           spaceBetween: 10
         }
       }
-      // pagination: {
-      //   el: ".product__pagination",
-      //   clickable: true,
-      // },
     });
   } catch (error) {
     console.log(error);
