@@ -58,32 +58,69 @@ __webpack_require__.r(__webpack_exports__);
 
 swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Autoplay, swiper__WEBPACK_IMPORTED_MODULE_0__.EffectCoverflow]);
 const slider = () => {
-  const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](".swiper", {
-    direction: "horizontal",
-    loop: true,
-    slidesPerView: 6,
-    navigation: {
-      nextEl: ".slider__next",
-      prevEl: ".slider__prev"
-    }
-  });
-  const productSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](".product__slider", {
-    direction: "horizontal",
-    loop: true,
-    spaceBetween: 25,
-    autoplay: 10000,
-    speed: 500,
-    initialSlide: 0,
-    slidesPerView: 2.5,
-    navigation: {
-      nextEl: ".product__prev",
-      prevEl: ".product__next"
-    },
-    pagination: {
-      el: ".product__pagination",
-      clickable: true
-    }
-  });
+  try {
+    const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](".swiper", {
+      direction: "horizontal",
+      loop: true,
+      slidesPerView: 6,
+      navigation: {
+        nextEl: ".slider__next",
+        prevEl: ".slider__prev"
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+  try {
+    const productSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](".product__slider", {
+      direction: "horizontal",
+      loop: true,
+      spaceBetween: 25,
+      autoplay: 10000,
+      speed: 500,
+      initialSlide: 0,
+      slidesPerView: 2.5,
+      slidesPerGroup: 1,
+      navigation: {
+        nextEl: ".product__prev",
+        prevEl: ".product__next"
+      },
+      pagination: {
+        el: ".product__pagination",
+        clickable: true
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+  try {
+    const relatedSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](".related__slider", {
+      direction: "horizontal",
+      loop: true,
+      initialSlide: 0,
+      slidesPerView: 3.5,
+      navigation: {
+        nextEl: ".related__next",
+        prevEl: ".related__prev"
+      },
+      breakpoints: {
+        992: {
+          slidesPerView: 3.5,
+          spaceBetween: 40
+        },
+        300: {
+          slidesPerView: 1,
+          spaceBetween: 10
+        }
+      }
+      // pagination: {
+      //   el: ".product__pagination",
+      //   clickable: true,
+      // },
+    });
+  } catch (error) {
+    console.log(error);
+  }
 };
 window.addEventListener("DOMContentLoaded", () => {
   slider();
@@ -124,14 +161,6 @@ const sortAndFilter = () => {
       this.classList.toggle("active");
       filterWrap.classList.toggle("active");
       filterContent.classList.toggle("active");
-    });
-    const showAllType = document.querySelector(".content__all"),
-      types = document.querySelectorAll(".header__link");
-    showAllType.addEventListener("click", function () {
-      types.forEach(type => {
-        type.classList.remove("hidden");
-      });
-      this.remove();
     });
   } catch (error) {
     console.log(error);

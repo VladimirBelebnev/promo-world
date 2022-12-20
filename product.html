@@ -64,23 +64,15 @@
 
         <div class="hero product">
             <div class="container">
-                <div class="hero__breadcrumbs">
+                <div class="hero__breadcrumbs product__breadcrumbs">
                     <a href="#">Главная / Каталог / Подкаталог / товар</a>
                 </div>
             </div>
             <div class="product__content">
+                <img class="product__logo" src="./img/logo.png" alt="logo">
                 <div class="product__sliderWrap">
                     <div class="swiper product__slider" dir="rtl">
                         <div class="swiper-wrapper product__wrapper">
-                            <div class="swiper-slide product__slide">
-                                <img src="./img/product-img.jpg" alt="product img">
-                            </div>
-                            <div class="swiper-slide product__slide">
-                                <img src="./img/product-img.jpg" alt="product img">
-                            </div>
-                            <div class="swiper-slide product__slide">
-                                <img src="./img/product-img.jpg" alt="product img">
-                            </div>
                             <div class="swiper-slide product__slide">
                                 <img src="./img/product-img.jpg" alt="product img">
                             </div>
@@ -113,6 +105,9 @@
                     </div>
                 </div>
                 <div class="product__block">
+                    <div class="hero__breadcrumbs product__breadcrumbs breadcrumbs__mobile">
+                        <a href="#">Главная / Каталог / Подкаталог / товар</a>
+                    </div>
                     <div class="product__header">
                         <span class="product__status">В наличии</span>
                         <h1 class="product__title">Деревянная модель HAND</h1>
@@ -145,6 +140,121 @@
                         <button class="product__btn">
                             В корзину
                         </button>
+                    </div>
+                </div>
+            </div>
+            <div class="related content">
+                <div class="related__block">
+                    <h3 class="related__title">Еще товары этой категории</h3>
+                    <div class="related__nav">
+                        <div class="related__prev">
+                            <svg viewBox="0 0 13 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M11.9415 22.054C12.2456 21.7499 12.2456 21.2558 11.9415 20.9517L2.22956 11.2588L11.9415 1.54683C12.2456 1.24274 12.2456 0.748591 11.9415 0.4445C11.6374 0.140408 11.1432 0.140408 10.8392 0.444499L0.595061 10.6886C0.443015 10.8406 0.366993 11.0307 0.366993 11.2398C0.366993 11.4298 0.443015 11.6389 0.595061 11.7909L10.8392 22.035C11.1432 22.3581 11.6374 22.3581 11.9415 22.054Z"
+                                    fill="#171717" />
+                            </svg>
+                        </div>
+                        <div class="related__next">
+                            <svg viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="26.005" cy="26.005" r="25.1318" transform="rotate(0.840468 26.005 26.005)"
+                                    stroke="#FF6600" />
+                                <path
+                                    d="M23.115 14.8661C22.8065 15.1657 22.7992 15.6598 23.0988 15.9683L32.6676 25.8027L22.8142 35.3711C22.5057 35.6707 22.4984 36.1648 22.798 36.4733C23.0976 36.7818 23.5917 36.7891 23.9003 36.4895L34.2935 26.3967C34.4478 26.2469 34.5266 26.058 34.5296 25.849C34.5324 25.6589 34.4595 25.4488 34.3097 25.2945L24.217 14.9013C23.9176 14.5738 23.4235 14.5665 23.115 14.8661Z"
+                                    fill="#171717" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper related__slider">
+                    <div class="swiper-wrapper related__wrapper">
+                        <div class="swiper-slide content__item item related__slide">
+                            <svg class="item__plus" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="19.5" cy="19.5" r="19" fill="white" stroke="#171717" />
+                                <path
+                                    d="M25.645 19.009H20.251V13.702H18.424V19.009H13.03V20.72H18.424V25.998H20.251V20.72H25.645V19.009Z"
+                                    fill="#171717" />
+                            </svg>
+                            <img class="item__img" src="./img/catalog-img.jpg" alt="catalog img">
+                            <h4 class="item__name">Футболка «Новая классика. Freestyle», белая (S)</h4>
+                            <div class="item__priceBlock">
+                                <div class="item__block">
+                                    <span class="item__status">В наличии</span>
+                                    <p class="item__price">970 ₽</p>
+                                    <span class="item__info">Минимальный заказ 10 шт</span>
+                                </div>
+                                <div class="item__amount">
+                                    <button class="minus">-</button>
+                                    <input class="amount" value="10" readonly>
+                                    <button class="plus">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide content__item item related__slide">
+                            <svg class="item__plus" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="19.5" cy="19.5" r="19" fill="white" stroke="#171717" />
+                                <path
+                                    d="M25.645 19.009H20.251V13.702H18.424V19.009H13.03V20.72H18.424V25.998H20.251V20.72H25.645V19.009Z"
+                                    fill="#171717" />
+                            </svg>
+                            <img class="item__img" src="./img/catalog-img.jpg" alt="catalog img">
+                            <h4 class="item__name">Футболка «Новая классика. Freestyle», белая (S)</h4>
+                            <div class="item__priceBlock">
+                                <div class="item__block">
+                                    <span class="item__status">В наличии</span>
+                                    <p class="item__price">970 ₽</p>
+                                    <span class="item__info">Минимальный заказ 10 шт</span>
+                                </div>
+                                <div class="item__amount">
+                                    <button class="minus">-</button>
+                                    <input class="amount" value="10" readonly>
+                                    <button class="plus">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide content__item item related__slide">
+                            <svg class="item__plus" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="19.5" cy="19.5" r="19" fill="white" stroke="#171717" />
+                                <path
+                                    d="M25.645 19.009H20.251V13.702H18.424V19.009H13.03V20.72H18.424V25.998H20.251V20.72H25.645V19.009Z"
+                                    fill="#171717" />
+                            </svg>
+                            <img class="item__img" src="./img/catalog-img.jpg" alt="catalog img">
+                            <h4 class="item__name">Футболка «Новая классика. Freestyle», белая (S)</h4>
+                            <div class="item__priceBlock">
+                                <div class="item__block">
+                                    <span class="item__status">В наличии</span>
+                                    <p class="item__price">970 ₽</p>
+                                    <span class="item__info">Минимальный заказ 10 шт</span>
+                                </div>
+                                <div class="item__amount">
+                                    <button class="minus">-</button>
+                                    <input class="amount" value="10" readonly>
+                                    <button class="plus">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide content__item item related__slide">
+                            <svg class="item__plus" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="19.5" cy="19.5" r="19" fill="white" stroke="#171717" />
+                                <path
+                                    d="M25.645 19.009H20.251V13.702H18.424V19.009H13.03V20.72H18.424V25.998H20.251V20.72H25.645V19.009Z"
+                                    fill="#171717" />
+                            </svg>
+                            <img class="item__img" src="./img/catalog-img.jpg" alt="catalog img">
+                            <h4 class="item__name">Футболка «Новая классика. Freestyle», белая (S)</h4>
+                            <div class="item__priceBlock">
+                                <div class="item__block">
+                                    <span class="item__status">В наличии</span>
+                                    <p class="item__price">970 ₽</p>
+                                    <span class="item__info">Минимальный заказ 10 шт</span>
+                                </div>
+                                <div class="item__amount">
+                                    <button class="minus">-</button>
+                                    <input class="amount" value="10" readonly>
+                                    <button class="plus">+</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
