@@ -360,15 +360,16 @@ const sortAndFilter = () => {
       const minusValue = item.querySelector(".minus"),
         plusValue = item.querySelector(".plus"),
         amountValue = item.querySelector(".amount");
+      amountValue.value = amountValue.dataset.amount;
       minusValue.addEventListener("click", () => {
-        if (amountValue.value != 10) {
-          amountValue.value = +amountValue.value - 10;
-          amountValue.setAttribute("value", amountValue.value);
+        if (amountValue.value != amountValue.dataset.amount) {
+          amountValue.value = +amountValue.value - +amountValue.dataset.amount;
+          amountValue.setAttribute("value", +amountValue.value);
         }
       });
       plusValue.addEventListener("click", () => {
-        amountValue.value = +amountValue.value + 10;
-        amountValue.setAttribute("value", amountValue.value);
+        amountValue.value = +amountValue.value + +amountValue.dataset.amount;
+        amountValue.setAttribute("value", +amountValue.value);
       });
     });
   } catch (error) {
@@ -379,15 +380,16 @@ const sortAndFilter = () => {
     const minusValue = productItem.querySelector(".minus"),
       plusValue = productItem.querySelector(".plus"),
       amountValue = productItem.querySelector(".amount");
+    amountValue.value = amountValue.dataset.amount;
     minusValue.addEventListener("click", () => {
-      if (amountValue.value != 10) {
-        amountValue.value = +amountValue.value - 10;
-        amountValue.setAttribute("value", amountValue.value);
+      if (amountValue.value != amountValue.dataset.amount) {
+        amountValue.value = +amountValue.value - +amountValue.dataset.amount;
+        amountValue.setAttribute("value", +amountValue.dataset.amount);
       }
     });
     plusValue.addEventListener("click", () => {
-      amountValue.value = +amountValue.value + 10;
-      amountValue.setAttribute("value", amountValue.value);
+      amountValue.value = +amountValue.value + +amountValue.dataset.amount;
+      amountValue.setAttribute("value", +amountValue.dataset.amount);
     });
   } catch (error) {
     console.log(error);
